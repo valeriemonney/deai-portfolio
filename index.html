@@ -6,469 +6,199 @@
   <title>Valérie — Designing for & with AI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet"/>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --white: #ffffff;
-      --bg: #f7f7f5;
-      --surface: #ffffff;
-      --border: #e4e4e0;
-      --text-primary: #1a1a18;
-      --text-secondary: #6b6b67;
-      --text-tertiary: #a0a09c;
-      --accent: #1a1a18;
-      --tag-bg: #efefec;
-      --radius: 12px;
-      --radius-sm: 6px;
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#f5f3ef;--surface:#fff;--border:#e2dfd8;
+      --text:#1a1916;--text-2:#706e68;--text-3:#b0ada6;
+      --coral:#e8450a;--coral-light:#fdf0eb;
+      --teal:#0a7a6e;--teal-light:#e6f4f2;
+      --amber:#c47a10;--amber-light:#fdf5e6;
+      --purple:#6b3fa0;--purple-light:#f2ecfa;
     }
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
 
-    html { scroll-behavior: smooth; }
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(245,243,239,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 40px;height:54px;display:flex;align-items:center;justify-content:space-between}
+    .nav-name{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--text);text-decoration:none}
+    .nav-links{display:flex;gap:24px;list-style:none}
+    .nav-links a{font-size:13px;color:var(--text-2);text-decoration:none;transition:color 0.15s}
+    .nav-links a:hover{color:var(--text)}
 
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
-      color: var(--text-primary);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
+    .hero{padding:120px 40px 80px;max-width:1000px;margin:0 auto}
+    .hero-kicker{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--coral);margin-bottom:24px;display:flex;align-items:center;gap:10px}
+    .hero-kicker::after{content:'';flex:0 0 40px;height:1px;background:var(--coral);opacity:0.4}
+    .hero h1{font-family:'Syne',sans-serif;font-size:clamp(48px,7vw,88px);font-weight:800;line-height:0.95;letter-spacing:-0.03em;color:var(--text);margin-bottom:32px}
+    .hero h1 .accent{color:var(--coral)}
+    .hero-desc{font-size:16px;color:var(--text-2);line-height:1.65;max-width:420px;margin-bottom:48px}
+    .hero-meta{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:20px 0}
+    .meta-item{flex:1;min-width:160px;padding-right:32px;border-right:1px solid var(--border);margin-right:32px}
+    .meta-item:last-child{border-right:none;margin-right:0;padding-right:0}
+    .meta-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-3);margin-bottom:5px}
+    .meta-val{font-size:13px;color:var(--text-2)}
 
-    /* NAV */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      background: rgba(247,247,245,0.88);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 40px;
-      height: 56px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+    .challenges{max-width:1000px;margin:0 auto;padding:0 40px 120px}
+    .sec-head{display:flex;align-items:center;gap:16px;padding-bottom:24px;border-bottom:2px solid var(--text);margin-bottom:0}
+    .sec-head h2{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase}
+    .sec-head-count{font-family:'DM Mono',monospace;font-size:11px;color:var(--text-3);margin-left:auto}
 
-    .nav-logo {
-      font-size: 14px;
-      font-weight: 500;
-      letter-spacing: 0.01em;
-      color: var(--text-primary);
-      text-decoration: none;
-    }
+    .chal-row{display:grid;grid-template-columns:100px 1fr 24px;align-items:center;gap:0 24px;padding:28px 0;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:all 0.2s;position:relative}
+    .chal-row:hover{padding-left:12px;padding-right:12px;margin:0 -12px;border-radius:12px;border-bottom-color:transparent;background:var(--surface);box-shadow:0 2px 20px rgba(0,0,0,0.06)}
+    .chal-id{font-family:'Syne',sans-serif;font-size:52px;font-weight:800;line-height:1;letter-spacing:-0.04em;color:var(--border);transition:color 0.2s;user-select:none}
+    .chal-body{}
+    .chal-title{font-family:'Syne',sans-serif;font-size:17px;font-weight:600;letter-spacing:-0.01em;margin-bottom:5px;line-height:1.3}
+    .chal-desc{font-size:13px;color:var(--text-2);line-height:1.5;margin-bottom:10px}
+    .chal-tags{display:flex;flex-wrap:wrap;gap:5px}
+    .ctag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.06em;background:var(--bg);border:1px solid var(--border);color:var(--text-3);padding:2px 8px;border-radius:10px}
+    .chal-arrow{font-size:20px;color:var(--border);transition:all 0.2s}
 
-    .nav-links {
-      display: flex;
-      gap: 32px;
-      list-style: none;
-    }
+    .chal-row.va:hover .chal-id{color:var(--coral)}
+    .chal-row.vb:hover .chal-id{color:var(--teal)}
+    .chal-row.vc:hover .chal-id{color:var(--coral)}
+    .chal-row.vd:hover .chal-id{color:var(--purple)}
+    .chal-row.ve:hover .chal-id{color:var(--coral)}
+    .chal-row.vf1:hover .chal-id{color:var(--teal)}
+    .chal-row.vf2:hover .chal-id{color:var(--coral)}
+    .chal-row.vg:hover .chal-id{color:var(--amber)}
+    .chal-row.va:hover .chal-arrow{color:var(--coral)}
+    .chal-row.vb:hover .chal-arrow{color:var(--teal)}
+    .chal-row.vc:hover .chal-arrow{color:var(--coral)}
+    .chal-row.vd:hover .chal-arrow{color:var(--purple)}
+    .chal-row.ve:hover .chal-arrow{color:var(--coral)}
+    .chal-row.vf1:hover .chal-arrow{color:var(--teal)}
+    .chal-row.vf2:hover .chal-arrow{color:var(--coral)}
+    .chal-row.vg:hover .chal-arrow{color:var(--amber)}
+    .chal-row:hover .chal-arrow{transform:translate(2px,-2px)}
 
-    .nav-links a {
-      font-size: 13px;
-      color: var(--text-secondary);
-      text-decoration: none;
-      transition: color 0.15s;
-    }
+    footer{border-top:1px solid var(--border);padding:28px 40px;max-width:1000px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+    footer p{font-size:12px;color:var(--text-3)}
+    .footer-tag{font-family:'DM Mono',monospace;font-size:10px;color:var(--text-3);letter-spacing:0.1em;text-transform:uppercase}
 
-    .nav-links a:hover { color: var(--text-primary); }
-
-    /* HERO */
-    .hero {
-      padding: 140px 40px 80px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .hero-eyebrow {
-      font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      font-weight: 300;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-tertiary);
-      margin-bottom: 24px;
-    }
-
-    .hero h1 {
-      font-size: clamp(36px, 5vw, 60px);
-      font-weight: 300;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      color: var(--text-primary);
-      margin-bottom: 24px;
-    }
-
-    .hero h1 em {
-      font-style: italic;
-      font-weight: 300;
-    }
-
-    .hero-desc {
-      font-size: 16px;
-      color: var(--text-secondary);
-      max-width: 520px;
-      line-height: 1.7;
-      margin-bottom: 40px;
-    }
-
-    .hero-meta {
-      display: flex;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-
-    .meta-item {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .meta-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-tertiary);
-    }
-
-    .meta-value {
-      font-size: 13px;
-      color: var(--text-secondary);
-    }
-
-    /* DIVIDER */
-    .divider {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 40px;
-      border-top: 1px solid var(--border);
-    }
-
-    /* CHALLENGES GRID */
-    .challenges {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 60px 40px 120px;
-    }
-
-    .section-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-tertiary);
-      margin-bottom: 32px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 16px;
-    }
-
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px;
-      text-decoration: none;
-      color: inherit;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
-      cursor: pointer;
-    }
-
-    .card:hover {
-      border-color: #c8c8c4;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-      transform: translateY(-2px);
-    }
-
-    .card-header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 12px;
-    }
-
-    .card-id {
-      font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      font-weight: 300;
-      color: var(--text-tertiary);
-      letter-spacing: 0.05em;
-    }
-
-    .card-status {
-      font-size: 10px;
-      font-weight: 500;
-      padding: 3px 8px;
-      border-radius: 20px;
-      letter-spacing: 0.04em;
-      white-space: nowrap;
-    }
-
-    .status-done { background: #e8f5e9; color: #2e7d32; }
-    .status-progress { background: #fff8e1; color: #f57f17; }
-    .status-planned { background: #f3f3f0; color: #888; }
-
-    .card-title {
-      font-size: 15px;
-      font-weight: 500;
-      line-height: 1.3;
-      color: var(--text-primary);
-    }
-
-    .card-desc {
-      font-size: 13px;
-      color: var(--text-secondary);
-      line-height: 1.5;
-    }
-
-    .card-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: auto;
-    }
-
-    .tag {
-      font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      background: var(--tag-bg);
-      color: var(--text-secondary);
-      padding: 3px 8px;
-      border-radius: var(--radius-sm);
-    }
-
-    .card-arrow {
-      font-size: 18px;
-      color: var(--text-tertiary);
-      transition: transform 0.15s, color 0.15s;
-      align-self: flex-end;
-    }
-
-    .card:hover .card-arrow {
-      transform: translate(2px, -2px);
-      color: var(--text-primary);
-    }
-
-    /* OPTIONAL BADGE */
-    .card.optional {
-      border-style: dashed;
-      opacity: 0.7;
-    }
-
-    /* FOOTER */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 32px 40px;
-      max-width: 900px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    footer p {
-      font-size: 12px;
-      color: var(--text-tertiary);
-    }
-
-    .footer-module {
-      font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      color: var(--text-tertiary);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    @media (max-width: 600px) {
-      nav { padding: 0 20px; }
-      .hero, .challenges { padding-left: 20px; padding-right: 20px; }
-      .hero { padding-top: 100px; }
-      .nav-links { display: none; }
-      footer { flex-direction: column; gap: 8px; padding: 24px 20px; }
+    @media(max-width:640px){
+      nav,.hero,.challenges,footer{padding-left:20px;padding-right:20px}
+      .hero h1{font-size:48px}
+      .chal-row{grid-template-columns:64px 1fr}
+      .chal-arrow{display:none}
+      .chal-id{font-size:38px}
+      .hero-meta{flex-direction:column;gap:16px}
+      .meta-item{border-right:none;padding-right:0;margin-right:0;border-bottom:1px solid var(--border);padding-bottom:16px}
+      .meta-item:last-child{border-bottom:none}
     }
   </style>
 </head>
 <body>
+<nav>
+  <a class="nav-name" href="index.html">Valérie Monney</a>
+  <ul class="nav-links">
+    <li><a href="#challenges">Challenges</a></li>
+    <li><a href="meta.html">Meta-Reflexion</a></li>
+  </ul>
+</nav>
 
-  <nav>
-    <a class="nav-logo" href="index.html">Valérie Heynen</a>
-    <ul class="nav-links">
-      <li><a href="#challenges">Challenges</a></li>
-      <li><a href="meta.html">Meta-Reflexion</a></li>
-    </ul>
-  </nav>
+<div class="hero">
+  <p class="hero-kicker">Portfolio · FS 2026 · FHGR</p>
+  <h1>Designing<br/>for &amp; <span class="accent">with AI</span></h1>
+  <p class="hero-desc">Meine Ergebnisse, Iterationen und Reflexionen — von Avatar-Design bis Workflow-Analyse.</p>
+  <div class="hero-meta">
+    <div class="meta-item"><p class="meta-label">Studentin</p><p class="meta-val">Valérie Monney</p></div>
+    <div class="meta-item"><p class="meta-label">Studiengang</p><p class="meta-val">Digital Business Management</p></div>
+    <div class="meta-item"><p class="meta-label">Hochschule</p><p class="meta-val">FHGR, Chur</p></div>
+    <div class="meta-item"><p class="meta-label">Semester</p><p class="meta-val">Frühlingssemester 2026</p></div>
+  </div>
+</div>
 
-  <section class="hero">
-    <p class="hero-eyebrow">Portfolio — FS 2026</p>
-    <h1>Designing for<br/><em>&amp; with AI</em></h1>
-    <p class="hero-desc">
-      Dieses Portfolio dokumentiert meine Ergebnisse, Iterationen und Reflexionen aus dem Modul „Designing for & with AI" an der FHGR.
-    </p>
-    <div class="hero-meta">
-      <div class="meta-item">
-        <span class="meta-label">Studentin</span>
-        <span class="meta-value">Valérie Heynen</span>
-      </div>
-      <div class="meta-item">
-        <span class="meta-label">Studiengang</span>
-        <span class="meta-value">Digital Business Management, FHGR</span>
-      </div>
-      <div class="meta-item">
-        <span class="meta-label">Semester</span>
-        <span class="meta-value">Frühlingssemester 2026</span>
-      </div>
+<section class="challenges" id="challenges">
+  <div class="sec-head">
+    <h2>Challenges</h2>
+    <span class="sec-head-count">8 Bausteine</span>
+  </div>
+
+  <a class="chal-row va" href="challenge-a.html">
+    <span class="chal-id">A</span>
+    <div class="chal-body">
+      <p class="chal-title">Kreative KI-Nutzung für Produkt- & Servicedesign</p>
+      <p class="chal-desc">Die Chursphäre — KI-gestütztes Tourismus-Konzept für Chur.</p>
+      <div class="chal-tags"><span class="ctag">Konzept</span><span class="ctag">Prompting</span><span class="ctag">Image Gen</span></div>
     </div>
-  </section>
+    <span class="chal-arrow">↗</span>
+  </a>
 
-  <div class="divider"></div>
-
-  <section class="challenges" id="challenges">
-    <p class="section-label">Challenges — Übersicht</p>
-    <div class="grid">
-
-      <a class="card" href="challenge-a.html">
-        <div class="card-header">
-          <span class="card-id">Challenge A</span>
-          <span class="card-status status-done">Abgeschlossen</span>
-        </div>
-        <p class="card-title">Kreative KI-Nutzung für Produkt- & Servicedesign</p>
-        <p class="card-desc">Produkt- und Servicekonzept für die Stadt Chur — die Chursphäre.</p>
-        <div class="card-tags">
-          <span class="tag">Konzept</span>
-          <span class="tag">Prompting</span>
-          <span class="tag">Image Gen</span>
-        </div>
-        <span class="card-arrow">↗</span>
-      </a>
-
-      <a class="card" href="challenge-b.html">
-        <div class="card-header">
-          <span class="card-id">Challenge B</span>
-          <span class="card-status status-done">Abgeschlossen</span>
-        </div>
-        <p class="card-title">KI-gestütztes Landingpage-Design</p>
-        <p class="card-desc">Landingpage-Konzept und Umsetzung für die Chursphäre, Stadt Chur.</p>
-        <div class="card-tags">
-          <span class="tag">UI Design</span>
-          <span class="tag">Landingpage</span>
-          <span class="tag">KI-Bilder</span>
-        </div>
-        <span class="card-arrow">↗</span>
-      </a>
-
-      <a class="card" href="challenge-c.html">
-        <div class="card-header">
-          <span class="card-id">Challenge C</span>
-          <span class="card-status status-progress">In Bearbeitung</span>
-        </div>
-        <p class="card-title">Daten-Dashboard in 3 Stilen</p>
-        <p class="card-desc">Visualisierung von Daten in drei verschiedenen visuellen Stilen.</p>
-        <div class="card-tags">
-          <span class="tag">Dashboard</span>
-          <span class="tag">Dataviz</span>
-        </div>
-        <span class="card-arrow">↗</span>
-      </a>
-
-      <a class="card" href="challenge-d.html">
-        <div class="card-header">
-          <span class="card-id">Challenge D</span>
-          <span class="card-status status-done">Abgeschlossen</span>
-        </div>
-        <p class="card-title">Workflow-Szenario für komplexe Web-Apps</p>
-        <p class="card-desc">Analyse eines SaaS-Onboarding-Flows und eigenes Kinobuchungs-Szenario mit Mermaid.js & Relume.</p>
-        <div class="card-tags">
-          <span class="tag">Flowchart</span>
-          <span class="tag">Mermaid.js</span>
-          <span class="tag">Relume</span>
-        </div>
-        <span class="card-arrow">↗</span>
-      </a>
-
-      <a class="card" href="challenge-e1.html">
-        <div class="card-header">
-          <span class="card-id">Challenge E1</span>
-          <span class="card-status status-progress">In Bearbeitung</span>
-        </div>
-        <p class="card-title">KI-App-Prototyp</p>
-        <p class="card-desc">Konzeption und Prototyping einer KI-gestützten Applikation.</p>
-        <div class="card-tags">
-          <span class="tag">Prototyp</span>
-          <span class="tag">KI-App</span>
-        </div>
-        <span class="card-arrow">↗</span>
-      </a>
-
-      <a class="card optional" href="challenge-e2.html">
-        <div class="card-header">
-          <span class="card-id">Challenge E2</span>
-          <span class="card-status status-planned">Optional</span>
-        </div>
-        <p class="card-title">App live stellen</p>
-        <p class="card-desc">Deployment der KI-App aus Challenge E1.</p>
-        <div class="card-tags">
-          <span class="tag">Deployment</span>
-        </div>
-        <span class="card-arrow">↗</span>
-      </a>
-
-      <a class="card" href="challenge-f1.html">
-        <div class="card-header">
-          <span class="card-id">Challenge F1</span>
-          <span class="card-status status-progress">In Bearbeitung</span>
-        </div>
-        <p class="card-title">Real-Time Management Decision Support</p>
-        <p class="card-desc">KI-gestützte Entscheidungsunterstützung in Echtzeit.</p>
-        <div class="card-tags">
-          <span class="tag">Decision Support</span>
-          <span class="tag">Real-Time</span>
-        </div>
-        <span class="card-arrow">↗</span>
-      </a>
-
-      <a class="card" href="challenge-f2.html">
-        <div class="card-header">
-          <span class="card-id">Challenge F2</span>
-          <span class="card-status status-done">Abgeschlossen</span>
-        </div>
-        <p class="card-title">KI-gesteuerter Avatar</p>
-        <p class="card-desc">Entwicklung von „Lionel" — einem KI-Avatar als digitaler Onboarding-Buddy für ChurMarketing.</p>
-        <div class="card-tags">
-          <span class="tag">Avatar</span>
-          <span class="tag">ConvAI</span>
-          <span class="tag">System Prompt</span>
-        </div>
-        <span class="card-arrow">↗</span>
-      </a>
-
-      <a class="card" href="challenge-g1.html">
-        <div class="card-header">
-          <span class="card-id">Challenge G1</span>
-          <span class="card-status status-planned">Geplant</span>
-        </div>
-        <p class="card-title">Vertrauen durch Explainable AI</p>
-        <p class="card-desc">Konzept & Umsetzung einer KI-Studienempfehlung für die FHGR.</p>
-        <div class="card-tags">
-          <span class="tag">XAI</span>
-          <span class="tag">FHGR</span>
-          <span class="tag">Konzept</span>
-        </div>
-        <span class="card-arrow">↗</span>
-      </a>
-
+  <a class="chal-row vb" href="challenge-b.html">
+    <span class="chal-id">B</span>
+    <div class="chal-body">
+      <p class="chal-title">KI-gestütztes Landingpage-Design</p>
+      <p class="chal-desc">Chursphäre-Landingpage mit KI-generierten Visuals.</p>
+      <div class="chal-tags"><span class="ctag">UI Design</span><span class="ctag">Landingpage</span><span class="ctag">KI-Bilder</span></div>
     </div>
-  </section>
+    <span class="chal-arrow">↗</span>
+  </a>
 
-  <footer>
-    <p>© 2026 Valérie Heynen</p>
-    <span class="footer-module">DEAI — FHGR</span>
-  </footer>
+  <a class="chal-row vc" href="challenge-c.html">
+    <span class="chal-id">C</span>
+    <div class="chal-body">
+      <p class="chal-title">Daten-Dashboard in 3 Stilen</p>
+      <p class="chal-desc">Dieselben Daten, drei völlig unterschiedliche visuelle Sprachen.</p>
+      <div class="chal-tags"><span class="ctag">Dashboard</span><span class="ctag">Dataviz</span><span class="ctag">Google Stitch</span></div>
+    </div>
+    <span class="chal-arrow">↗</span>
+  </a>
 
+  <a class="chal-row vd" href="challenge-d.html">
+    <span class="chal-id">D</span>
+    <div class="chal-body">
+      <p class="chal-title">Workflow-Szenario für komplexe Web-Apps</p>
+      <p class="chal-desc">Remote.com analysiert, Kinobuchungs-Flow mit Mermaid.js & Relume entwickelt.</p>
+      <div class="chal-tags"><span class="ctag">Flowchart</span><span class="ctag">Mermaid.js</span><span class="ctag">Relume</span></div>
+    </div>
+    <span class="chal-arrow">↗</span>
+  </a>
+
+  <a class="chal-row ve" href="challenge-e1.html">
+    <span class="chal-id">E</span>
+    <div class="chal-body">
+      <p class="chal-title">KI-App-Prototyp — VibeSwipe Travel</p>
+      <p class="chal-desc">Tinder-Style Reise-App mit KI-Vibe-Analyse. Live auf Vercel.</p>
+      <div class="chal-tags"><span class="ctag">Bolt.new</span><span class="ctag">Gemini AI</span><span class="ctag">Pexels API</span><span class="ctag">Vercel</span></div>
+    </div>
+    <span class="chal-arrow">↗</span>
+  </a>
+
+  <a class="chal-row vf1" href="challenge-f1.html">
+    <span class="chal-id">F1</span>
+    <div class="chal-body">
+      <p class="chal-title">Real-Time Management Decision Support</p>
+      <p class="chal-desc">Commitment Poké-Bowl Lab — Gamification für Management-Entscheidungen.</p>
+      <div class="chal-tags"><span class="ctag">Gamification</span><span class="ctag">AntiGravity</span><span class="ctag">Gestensteuerung</span></div>
+    </div>
+    <span class="chal-arrow">↗</span>
+  </a>
+
+  <a class="chal-row vf2" href="challenge-f2.html">
+    <span class="chal-id">F2</span>
+    <div class="chal-body">
+      <p class="chal-title">KI-gesteuerter Avatar — Lionel</p>
+      <p class="chal-desc">Digitaler Onboarding-Buddy für ChurMarketing, aufgebaut mit ConvAI.</p>
+      <div class="chal-tags"><span class="ctag">Avatar</span><span class="ctag">ConvAI</span><span class="ctag">System Prompt</span></div>
+    </div>
+    <span class="chal-arrow">↗</span>
+  </a>
+
+  <a class="chal-row vg" href="challenge-g1.html">
+    <span class="chal-id">G</span>
+    <div class="chal-body">
+      <p class="chal-title">Vertrauen durch Explainable AI — GlassCareer</p>
+      <p class="chal-desc">Transparentes KI-Karriere-Ökosystem mit Skill Garden und Human-in-the-Loop.</p>
+      <div class="chal-tags"><span class="ctag">XAI</span><span class="ctag">Lovable</span><span class="ctag">Stitch</span></div>
+    </div>
+    <span class="chal-arrow">↗</span>
+  </a>
+
+</section>
+
+<footer>
+  <p>© 2026 Valérie Monney</p>
+  <span class="footer-tag">DEAI · FHGR · FS 2026</span>
+</footer>
 </body>
 </html>

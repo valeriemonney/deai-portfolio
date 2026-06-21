@@ -1,1 +1,231 @@
-<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Challenge — Valérie Heynen</title><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet"/><style>*{box-sizing:border-box;margin:0;padding:0}:root{--bg:#f7f7f5;--border:#e4e4e0;--text-primary:#1a1a18;--text-secondary:#6b6b67;--text-tertiary:#a0a09c}body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--text-primary);-webkit-font-smoothing:antialiased}nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(247,247,245,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 40px;height:56px;display:flex;align-items:center;justify-content:space-between}.nav-logo{font-size:14px;font-weight:500;color:var(--text-primary);text-decoration:none}.nav-back{font-size:13px;color:var(--text-secondary);text-decoration:none}.placeholder{padding:160px 40px;max-width:860px;margin:0 auto;text-align:center}.mono{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-tertiary);margin-bottom:20px}h1{font-size:32px;font-weight:300;letter-spacing:-.02em;margin-bottom:16px}p{font-size:15px;color:var(--text-secondary);line-height:1.7}.btn{display:inline-block;margin-top:32px;font-size:13px;color:var(--text-secondary);text-decoration:none;border:1px solid var(--border);padding:10px 20px;border-radius:8px}</style></head><body><nav><a class="nav-logo" href="index.html">Valérie Heynen</a><a class="nav-back" href="index.html">← Alle Challenges</a></nav><div class="placeholder"><p class="mono">In Bearbeitung</p><h1>Seite wird noch abgefüllt</h1><p>Diese Challenge-Seite wird demnächst ergänzt.</p><a class="btn" href="index.html">← Zurück zur Übersicht</a></div></body></html>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Challenge E1 — Valérie Monney</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#faf8f5;--warm:#f2ede6;--surface:#fff;--border:#e5e0d8;
+      --text:#1a1916;--text-2:#6e6b63;--text-3:#aea9a0;
+      --purple:#6b3fa0;--purple-bg:#f2ecfa;--purple-border:#c4a8e8;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,245,0.93);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 40px;height:54px;display:flex;align-items:center;justify-content:space-between}
+    .nav-name{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--text);text-decoration:none}
+    .nav-back{font-size:13px;color:var(--text-2);text-decoration:none;transition:color 0.15s}
+    .nav-back:hover{color:var(--text)}
+    .header{background:var(--purple-bg);padding:90px 40px 48px;border-bottom:1px solid var(--purple-border)}
+    .header-inner{max-width:920px;margin:0 auto}
+    .breadcrumb{font-family:'DM Mono',monospace;font-size:10px;color:var(--purple);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:16px;opacity:0.7}
+    .big-letter{font-family:'Syne',sans-serif;font-size:110px;font-weight:800;line-height:0.85;letter-spacing:-0.04em;color:var(--purple);display:block;margin-bottom:14px}
+    .header h1{font-family:'Syne',sans-serif;font-size:clamp(22px,3vw,34px);font-weight:700;letter-spacing:-0.02em;line-height:1.2;margin-bottom:20px;max-width:560px}
+    .pills{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:32px}
+    .pill{font-family:'DM Mono',monospace;font-size:10px;padding:5px 12px;border-radius:20px;border:1px solid var(--border);color:var(--text-2);background:var(--surface)}
+    .pill.hot{background:var(--purple-bg);border-color:var(--purple-border);color:var(--purple)}
+    .btn-row{display:flex;gap:12px;flex-wrap:wrap}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--purple);color:white;font-family:'Syne',sans-serif;font-size:13px;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none;transition:opacity 0.15s}
+    .btn-primary:hover{opacity:0.88}
+    .btn-secondary{display:inline-flex;align-items:center;gap:8px;background:var(--surface);color:var(--purple);font-family:'Syne',sans-serif;font-size:13px;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none;border:2px solid var(--purple);transition:all 0.15s}
+    .btn-secondary:hover{background:var(--purple-bg)}
+    .content{max-width:920px;margin:0 auto;padding:0 40px 100px}
+    .block{padding:48px 0;border-bottom:1px solid var(--border)}
+    .block:last-child{border-bottom:none}
+    .eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--purple);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+    .eyebrow::after{content:'';flex:0 0 24px;height:1px;background:var(--purple);opacity:0.35}
+    .block h2{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;margin-bottom:12px;letter-spacing:-0.01em}
+    .block p{font-size:14px;color:var(--text-2);line-height:1.8;max-width:600px}
+    .app-frame{margin-top:24px;border-radius:14px 14px 0 0;overflow:hidden;border:1px solid var(--border);border-bottom:none;background:#0a0a0a;display:flex;justify-content:center;padding:32px}
+    .app-frame img{width:100%;max-width:420px;border-radius:20px;display:block;box-shadow:0 24px 60px rgba(0,0,0,0.4)}
+    .board-bar{padding:14px 18px;border:1px solid var(--border);border-radius:0 0 14px 14px;display:flex;justify-content:space-between;align-items:center;background:var(--surface)}
+    .board-caption{font-size:12px;color:var(--text-3);font-family:'DM Mono',monospace}
+    .board-link{color:var(--purple);font-family:'DM Mono',monospace;font-size:11px;text-decoration:none;letter-spacing:0.04em;transition:opacity 0.15s}
+    .board-link:hover{opacity:0.75}
+
+    /* VERSION TIMELINE */
+    .versions{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+    .version-card{background:var(--warm);border-radius:12px;padding:20px 22px;border-left:3px solid var(--purple)}
+    .version-label{font-family:'DM Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:0.12em;color:var(--purple);margin-bottom:8px}
+    .version-card h3{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin-bottom:6px}
+    .version-card p{font-size:13px;color:var(--text-2);line-height:1.6}
+    .version-card a{display:inline-flex;align-items:center;gap:4px;margin-top:10px;font-family:'DM Mono',monospace;font-size:11px;color:var(--purple);text-decoration:none;letter-spacing:0.04em}
+    .version-card a:hover{opacity:0.75}
+
+    .vision-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+    .vcard{background:var(--warm);border-radius:12px;padding:20px 22px;border-left:3px solid var(--purple)}
+    .vcard h3{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;margin-bottom:6px;color:var(--text)}
+    .vcard p{font-size:13px;color:var(--text-2);line-height:1.6}
+    .flow{display:flex;gap:0;margin-top:20px;overflow-x:auto;padding-bottom:8px}
+    .flow-step{display:flex;align-items:center;gap:0;flex-shrink:0}
+    .fbox{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px 16px;font-size:12px;color:var(--text-2);font-family:'DM Mono',monospace;white-space:nowrap}
+    .farrow{color:var(--text-3);padding:0 8px;font-size:16px}
+    .tech-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+    .tech-badge{font-family:'DM Mono',monospace;font-size:11px;background:var(--purple-bg);border:1px solid var(--purple-border);color:var(--purple);padding:5px 12px;border-radius:6px}
+    .bullets{margin-top:18px;display:flex;flex-direction:column;gap:12px}
+    .bullet{display:flex;gap:14px;align-items:flex-start;padding:16px 20px;background:var(--warm);border-radius:10px}
+    .dot{width:6px;height:6px;border-radius:50%;background:var(--purple);margin-top:7px;flex-shrink:0}
+    .bullet p{font-size:14px;color:var(--text-2);line-height:1.7}
+    .group-box{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border-radius:12px;overflow:hidden;margin-top:20px;border:1px solid var(--border)}
+    .gcol{background:var(--surface);padding:20px 22px;display:flex;flex-direction:column;gap:5px}
+    .glabel{font-family:'DM Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-3)}
+    .gval{font-size:13px;color:var(--text-2);line-height:1.5}
+    .bnav{display:flex;justify-content:space-between;align-items:center;padding:32px 40px 52px;max-width:920px;margin:0 auto;border-top:1px solid var(--border)}
+    .bnav a{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--text-2);text-decoration:none;transition:color 0.15s}
+    .bnav a:hover{color:var(--purple)}
+    @media(max-width:640px){
+      nav,.content,.bnav{padding-left:20px;padding-right:20px}
+      .header{padding-left:20px;padding-right:20px}
+      .big-letter{font-size:80px}
+      .vision-grid,.versions{grid-template-columns:1fr}
+      .group-box{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-name" href="index.html">Valérie Monney</a>
+  <a class="nav-back" href="index.html">← Alle Challenges</a>
+</nav>
+
+<div class="header">
+  <div class="header-inner">
+    <p class="breadcrumb">Portfolio / Challenge E1</p>
+    <span class="big-letter">E</span>
+    <h1>KI-App-Prototyp —<br/>VibeSwipe Travel</h1>
+    <div class="pills">
+      <span class="pill hot">Vibe Coding</span>
+      <span class="pill hot">Bolt.new</span>
+      <span class="pill">Gemini AI</span>
+      <span class="pill">Pexels API</span>
+      <span class="pill">Vercel</span>
+    </div>
+    <div class="btn-row">
+      <a class="btn-primary" href="https://vibeswipe-travel-app.vercel.app/" target="_blank">App live ↗</a>
+      <a class="btn-secondary" href="https://v0.app/valeriefhgr/chat/vibeswipe-travel-app-cikiS0HN4YA?ref=DJ77OB" target="_blank">v0 Version ↗</a>
+      <a class="btn-secondary" href="https://www.figma.com/board/I5lrxwKDYtZhiE3hFft9Ii/Portfolio-Designing-for-and-with-AI-Val%C3%A9rie-Monney?node-id=1-857" target="_blank">Figma ↗</a>
+    </div>
+  </div>
+</div>
+
+<main class="content">
+
+  <section class="block">
+    <p class="eyebrow">Artefakt</p>
+    <h2>VibeSwipe Travel</h2>
+    <p>Eine KI-gestützte Reise-App nach dem Tinder-Prinzip: Statt endloser Suchfilter swipet der User atmosphärische Bilder — die KI analysiert die visuellen Vorlieben und empfiehlt drei perfekt passende Reiseziele. Kein Suchfeld. Kein Stress. Nur Vibes.</p>
+
+    <div class="app-frame">
+      <img src="che1-app.png" alt="VibeSwipe App Screenshot"/>
+    </div>
+    <div class="board-bar">
+      <span class="board-caption">VibeSwipe · Live auf Vercel</span>
+      <a class="board-link" href="https://vibeswipe-travel-app.vercel.app/" target="_blank">vibeswipe-travel-app.vercel.app ↗</a>
+    </div>
+
+    <div style="margin-top:32px">
+      <h2 style="margin-bottom:16px">Entwicklungsprozess — Zwei Versionen</h2>
+      <div class="versions">
+        <div class="version-card">
+          <p class="version-label">Version 1 — Prototyp</p>
+          <h3>Bolt.new</h3>
+          <p>Erste funktionierende Version mit Supabase-Datenbank, Edge Functions und Swipe-Mechanik. Schneller Einstieg ohne lokales Setup — ideal für das initiale Vibe Coding.</p>
+          <a href="https://bolt.new/~/sb1-vcbshar1" target="_blank">In Bolt öffnen ↗</a>
+        </div>
+        <div class="version-card">
+          <p class="version-label">Version 2 — Live App</p>
+          <h3>Vercel + Pexels API</h3>
+          <p>Weiterentwickelt mit echter Pexels API für dynamische Reisebilder und Gemini AI für Vibe-Analyse. Deployed auf Vercel mit eigenem Domain.</p>
+          <a href="https://vibeswipe-travel-app.vercel.app/" target="_blank">Live App öffnen ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:32px">
+      <h2 style="margin-bottom:16px">User Flow</h2>
+      <div class="flow">
+        <div class="flow-step"><div class="fbox">App öffnen</div><span class="farrow">→</span></div>
+        <div class="flow-step"><div class="fbox">~15 Bilder swipen</div><span class="farrow">→</span></div>
+        <div class="flow-step"><div class="fbox">Budget & Dauer</div><span class="farrow">→</span></div>
+        <div class="flow-step"><div class="fbox">KI → Top 3 Ziele</div><span class="farrow">→</span></div>
+        <div class="flow-step"><div class="fbox">Plan auswählen</div><span class="farrow">→</span></div>
+        <div class="flow-step"><div class="fbox">Buchen</div></div>
+      </div>
+    </div>
+
+    <div style="margin-top:32px">
+      <h2 style="margin-bottom:16px">Tech Stack</h2>
+      <div class="tech-row">
+        <span class="tech-badge">Next.js</span>
+        <span class="tech-badge">Tailwind CSS</span>
+        <span class="tech-badge">Framer Motion</span>
+        <span class="tech-badge">Gemini AI</span>
+        <span class="tech-badge">Pexels API</span>
+        <span class="tech-badge">Supabase</span>
+        <span class="tech-badge">Edge Functions</span>
+        <span class="tech-badge">Vercel</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <p class="eyebrow">Iteration</p>
+    <h2>VISION.md als Context Baseline</h2>
+    <p>Vor dem ersten Prompt wurde ein vollständiges VISION.md Manifest erstellt — Zielgruppe, Kernfunktionen, Architektur und MVP-Phasen. Das war der entscheidende Unterschied zu blindem Vibe Coding.</p>
+    <div class="vision-grid">
+      <div class="vcard">
+        <h3>Context Baseline</h3>
+        <p>VISION.md als erster Prompt mitgegeben — die KI hatte sofort Kontext, weniger Halluzinationen, bessere Outputs von Anfang an.</p>
+      </div>
+      <div class="vcard">
+        <h3>Zoom-In Methode</h3>
+        <p>Iterativ: (1) Makro-Layout, (2) UI-Komponenten verfeinern, (3) Swipe-Animationen und Haptik. Nie alles auf einmal prompten.</p>
+      </div>
+      <div class="vcard">
+        <h3>Pexels API Integration</h3>
+        <p>Echte Reisebilder statt statischer Platzhalter. API-Key in .env gesetzt — Bolt hat das Setup automatisch gehandhabt.</p>
+      </div>
+      <div class="vcard">
+        <h3>Plan Mode & Steering</h3>
+        <p>Komplexe Features zuerst als Text-Plan. Error-Logs direkt in den Chat kopiert — effizienter als blind weiterzupromten.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <p class="eyebrow">Reflexion</p>
+    <h2>Learnings</h2>
+    <div class="bullets">
+      <div class="bullet"><div class="dot"></div><p><strong>Die Vision zählt:</strong> Das VISION.md Manifest war mehr als Dokumentation — es war der Schlüssel zu konsistenten KI-Outputs. Ohne Kontext ist Vibe Coding frustrierend.</p></div>
+      <div class="bullet"><div class="dot"></div><p><strong>Bolt → Vercel:</strong> Bolt eignet sich perfekt für schnelle Prototypen, Vercel für die finale Deployment-Umgebung. Beide Tools zusammen ergeben einen effizienten Workflow.</p></div>
+      <div class="bullet"><div class="dot"></div><p><strong>APIs sind einfacher als gedacht:</strong> Pexels API war in wenigen Minuten eingebunden — die grösste Hürde war das Verstehen was die API überhaupt macht, nicht die technische Integration.</p></div>
+      <div class="bullet"><div class="dot"></div><p><strong>Gemini-Tagging in Echtzeit</strong> war zu langsam für flüssiges Swipen — die KI-Analyse läuft deshalb gebündelt nach dem Swipen, nicht pro Karte.</p></div>
+      <div class="bullet"><div class="dot"></div><p><strong>Zero-Search UX funktioniert:</strong> Das "kein Suchfeld"-Prinzip ist intuitiver als erwartet — Nutzer verstehen die Swipe-Mechanik sofort ohne Erklärung.</p></div>
+      <div class="bullet"><div class="dot"></div><p><strong>Bolt.new als Gamechanger:</strong> Kein lokales Setup, kein Terminal-Stress — Bolt ermöglichte es, innerhalb von Minuten einen funktionierenden Prototyp mit Datenbank und Edge Functions zu haben. Ideal für schnelles Experimentieren ohne technische Hürden.</p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <p class="eyebrow">Gruppeninfo</p>
+    <h2>Beteiligte & Eigenleistung</h2>
+    <div class="group-box">
+      <div class="gcol"><span class="glabel">Erstellt von</span><span class="gval">Valérie Monney</span></div>
+      <div class="gcol"><span class="glabel">Eigenleistung</span><span class="gval">Konzept (VISION.md), Bolt-Prototyp, Pexels API Integration, Vercel Deployment</span></div>
+      <div class="gcol"><span class="glabel">Tools</span><span class="gval">Bolt.new, Vercel, Gemini AI, Pexels API, Next.js, Supabase</span></div>
+    </div>
+  </section>
+
+</main>
+
+<nav class="bnav">
+  <a href="challenge-d.html">← Challenge D</a>
+  <a href="index.html">Übersicht</a>
+  <a href="challenge-f1.html">Challenge F1 →</a>
+</nav>
+
+</body>
+</html>
