@@ -1,1 +1,195 @@
-<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Challenge — Valérie Heynen</title><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet"/><style>*{box-sizing:border-box;margin:0;padding:0}:root{--bg:#f7f7f5;--border:#e4e4e0;--text-primary:#1a1a18;--text-secondary:#6b6b67;--text-tertiary:#a0a09c}body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--text-primary);-webkit-font-smoothing:antialiased}nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(247,247,245,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 40px;height:56px;display:flex;align-items:center;justify-content:space-between}.nav-logo{font-size:14px;font-weight:500;color:var(--text-primary);text-decoration:none}.nav-back{font-size:13px;color:var(--text-secondary);text-decoration:none}.placeholder{padding:160px 40px;max-width:860px;margin:0 auto;text-align:center}.mono{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-tertiary);margin-bottom:20px}h1{font-size:32px;font-weight:300;letter-spacing:-.02em;margin-bottom:16px}p{font-size:15px;color:var(--text-secondary);line-height:1.7}.btn{display:inline-block;margin-top:32px;font-size:13px;color:var(--text-secondary);text-decoration:none;border:1px solid var(--border);padding:10px 20px;border-radius:8px}</style></head><body><nav><a class="nav-logo" href="index.html">Valérie Heynen</a><a class="nav-back" href="index.html">← Alle Challenges</a></nav><div class="placeholder"><p class="mono">In Bearbeitung</p><h1>Seite wird noch abgefüllt</h1><p>Diese Challenge-Seite wird demnächst ergänzt.</p><a class="btn" href="index.html">← Zurück zur Übersicht</a></div></body></html>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Challenge G1 — Valérie Monney</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#faf8f5;--warm:#f2ede6;--surface:#fff;--border:#e5e0d8;
+      --text:#1a1916;--text-2:#6e6b63;--text-3:#aea9a0;
+      --amber:#c47a10;--amber-bg:#fdf5e6;--amber-border:#f0c97a;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,245,0.93);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 40px;height:54px;display:flex;align-items:center;justify-content:space-between}
+    .nav-name{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--text);text-decoration:none}
+    .nav-back{font-size:13px;color:var(--text-2);text-decoration:none;transition:color 0.15s}
+    .nav-back:hover{color:var(--text)}
+    .header{background:var(--amber-bg);padding:90px 40px 48px;border-bottom:1px solid var(--amber-border)}
+    .header-inner{max-width:920px;margin:0 auto}
+    .breadcrumb{font-family:'DM Mono',monospace;font-size:10px;color:var(--amber);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:16px;opacity:0.8}
+    .big-letter{font-family:'Syne',sans-serif;font-size:110px;font-weight:800;line-height:0.85;letter-spacing:-0.04em;color:var(--amber);display:block;margin-bottom:14px}
+    .header h1{font-family:'Syne',sans-serif;font-size:clamp(22px,3vw,34px);font-weight:700;letter-spacing:-0.02em;line-height:1.2;margin-bottom:20px;max-width:560px}
+    .pills{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:32px}
+    .pill{font-family:'DM Mono',monospace;font-size:10px;padding:5px 12px;border-radius:20px;border:1px solid var(--border);color:var(--text-2);background:var(--surface)}
+    .pill.hot{background:var(--amber-bg);border-color:var(--amber-border);color:var(--amber)}
+    .btn-row{display:flex;gap:12px;flex-wrap:wrap}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:white;font-family:'Syne',sans-serif;font-size:13px;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none;transition:opacity 0.15s}
+    .btn-primary:hover{opacity:0.88}
+    .btn-secondary{display:inline-flex;align-items:center;gap:8px;background:var(--surface);color:var(--amber);font-family:'Syne',sans-serif;font-size:13px;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none;border:2px solid var(--amber);transition:all 0.15s}
+    .btn-secondary:hover{background:var(--amber-bg)}
+    .content{max-width:920px;margin:0 auto;padding:0 40px 100px}
+    .block{padding:48px 0;border-bottom:1px solid var(--border)}
+    .block:last-child{border-bottom:none}
+    .eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--amber);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+    .eyebrow::after{content:'';flex:0 0 24px;height:1px;background:var(--amber);opacity:0.35}
+    .block h2{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;margin-bottom:12px;letter-spacing:-0.01em}
+    .block p{font-size:14px;color:var(--text-2);line-height:1.8;max-width:600px}
+    .block p+p{margin-top:10px}
+    .board{margin-top:24px;border-radius:14px 14px 0 0;overflow:hidden;border:1px solid var(--border);border-bottom:none;background:var(--warm)}
+    .board img{width:100%;display:block}
+    .board-bar{padding:14px 18px;border:1px solid var(--border);border-radius:0 0 14px 14px;display:flex;justify-content:space-between;align-items:center;background:var(--surface)}
+    .board-caption{font-size:12px;color:var(--text-3);font-family:'DM Mono',monospace}
+    .board-link{color:var(--amber);font-family:'DM Mono',monospace;font-size:11px;text-decoration:none;letter-spacing:0.04em;transition:opacity 0.15s}
+    .board-link:hover{opacity:0.75}
+    .xai-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+    .xai-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px}
+    .xai-icon{font-size:22px;margin-bottom:8px}
+    .xai-card h3{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;margin-bottom:6px}
+    .xai-card p{font-size:12px;color:var(--text-2);line-height:1.6}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+    .card{background:var(--warm);border-radius:12px;padding:20px 22px;border-left:3px solid var(--amber)}
+    .card h3{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin-bottom:6px}
+    .card p{font-size:13px;color:var(--text-2);line-height:1.6}
+    .bullets{margin-top:18px;display:flex;flex-direction:column;gap:12px}
+    .bullet{display:flex;gap:14px;align-items:flex-start;padding:16px 20px;background:var(--warm);border-radius:10px}
+    .dot{width:6px;height:6px;border-radius:50%;background:var(--amber);margin-top:7px;flex-shrink:0}
+    .bullet p{font-size:14px;color:var(--text-2);line-height:1.7}
+    .group-box{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border-radius:12px;overflow:hidden;margin-top:20px;border:1px solid var(--border)}
+    .gcol{background:var(--surface);padding:20px 22px;display:flex;flex-direction:column;gap:5px}
+    .glabel{font-family:'DM Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-3)}
+    .gval{font-size:13px;color:var(--text-2);line-height:1.5}
+    .bnav{display:flex;justify-content:space-between;align-items:center;padding:32px 40px 52px;max-width:920px;margin:0 auto;border-top:1px solid var(--border)}
+    .bnav a{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--text-2);text-decoration:none;transition:color 0.15s}
+    .bnav a:hover{color:var(--amber)}
+    @media(max-width:640px){
+      nav,.content,.bnav{padding-left:20px;padding-right:20px}
+      .header{padding-left:20px;padding-right:20px}
+      .big-letter{font-size:80px}
+      .xai-grid,.two-col,.group-box{grid-template-columns:1fr}
+      .btn-row{flex-direction:column}
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-name" href="index.html">Valérie Monney</a>
+  <a class="nav-back" href="index.html">← Alle Challenges</a>
+</nav>
+
+<div class="header">
+  <div class="header-inner">
+    <p class="breadcrumb">Portfolio / Challenge G1</p>
+    <span class="big-letter">G1</span>
+    <h1>Vertrauen durch<br/>Explainable AI — GlassCareer</h1>
+    <div class="pills">
+      <span class="pill hot">Explainable AI</span>
+      <span class="pill hot">Lovable</span>
+      <span class="pill">Stitch</span>
+      <span class="pill">Career Compass</span>
+      <span class="pill">Human-in-the-Loop</span>
+    </div>
+    <div class="btn-row">
+      <a class="btn-primary" href="https://www.figma.com/board/d0KBdnZYXws3fRg0HMkTjx/Portfolio-DEAI-Val%C3%A9rie-Monney" target="_blank">Im Figma öffnen ↗</a>
+      <a class="btn-secondary" href="https://id-preview--d3647521-49f3-49e6-b803-7030e43bc0ce.lovable.app" target="_blank">GlassCareer App ↗</a>
+    </div>
+  </div>
+</div>
+
+<main class="content">
+
+  <section class="block">
+    <p class="eyebrow">Artefakt</p>
+    <h2>GlassCareer — Transparentes KI-Karriere-Ökosystem</h2>
+    <p>GlassCareer transformiert das intransparente KI-Parsing in eine interaktive, visuell anspruchsvolle "Glass Box" Experience. Das System fungiert als lebenslanger, KI-gestützter Karriere- und Bildungs-Copilot — und macht die mathematische Entscheidung "Das Warum" offen und nachvollziehbar.</p>
+
+    <div class="board">
+      <img src="chg1-figma.png" alt="Challenge G1 — GlassCareer"/>
+    </div>
+    <div class="board-bar">
+      <span class="board-caption">Challenge G1 · Figma Board</span>
+      <a class="board-link" href="https://www.figma.com/board/d0KBdnZYXws3fRg0HMkTjx/Portfolio-DEAI-Val%C3%A9rie-Monney" target="_blank">Vollansicht öffnen ↗</a>
+    </div>
+
+    <div style="margin-top:32px">
+      <h2 style="margin-bottom:16px">Die 3 XAI-Prinzipien</h2>
+      <div class="xai-grid">
+        <div class="xai-card">
+          <div class="xai-icon">🌱</div>
+          <h3>Skill Garden</h3>
+          <p>Visualisierung der Entscheidungslogik als "Skill Garden" — macht den Unterschied zwischen dem was man hat und dem was man braucht sichtbar.</p>
+        </div>
+        <div class="xai-card">
+          <div class="xai-icon">⚖️</div>
+          <h3>Alternativen-Matrix</h3>
+          <p>Kontrafaktische Erklärungen zeigen: "Warum nicht...?" — differenziert, präzise, mit echten Verbesserungsvorschlägen statt generischen Absagen.</p>
+        </div>
+        <div class="xai-card">
+          <div class="xai-icon">🎛️</div>
+          <h3>Human-in-the-Loop</h3>
+          <p>Horizon Slider und Sandbox erlauben aktive Kontrolle — Nutzer navigieren intuitive Hebel als direktes Steuerungselement des Algorithmus.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <p class="eyebrow">Iteration</p>
+    <h2>Von Stitch zu Lovable</h2>
+    <p>Der Prozess war agil aufgebaut: Das theoretische Fundament (Mirror, Goal, Bridge) und das erste visuelle Artefakt wurden gemeinsam im Team konsolidiert. Die detaillierte Ausarbeitung der drei XAI-Abschnitte sowie das Testing verschiedener Generierungstools (Stitch, Lovable) erfolgten anschliessend eigenständig.</p>
+    <div class="two-col">
+      <div class="card">
+        <h3>Stitch — Design First</h3>
+        <p>Google Stitch für initiales UI-Design und schnelle Visualisierung. Testen der Prompt-Formulierungen, Verfeinern des dreispaltigen UI-Grids.</p>
+      </div>
+      <div class="card">
+        <h3>Lovable — Finale Umsetzung</h3>
+        <p>Lovable für die funktionierende App. Ausformulieren der spezifischen Feature-Details — von der Skizze zum klickbaren Prototyp.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <p class="eyebrow">Reflexion</p>
+    <h2>Learnings</h2>
+    <div class="bullets">
+      <div class="bullet"><div class="dot"></div><p>Explainable AI ist kein Feature — es ist ein Designprinzip. Wenn die KI erklärt was sie tut, vertrauen Nutzer dem Ergebnis mehr und fühlen sich weniger ausgeliefert. Transparenz ist nicht Nice-to-have, sondern Voraussetzung für echtes Vertrauen.</p></div>
+      <div class="bullet"><div class="dot"></div><p>Der Wechsel von Stitch zu Lovable war der richtige Entscheid — Design-Tools sind gut für Inspiration, aber erst mit Lovable entstand ein Prototyp den man wirklich anfassen und erleben kann.</p></div>
+      <div class="bullet"><div class="dot"></div><p>Human-in-the-Loop klingt technisch, ist aber simples UX-Denken: Gib dem Nutzer Kontrolle, zeig wie Änderungen das Ergebnis beeinflussen — das macht den Unterschied zwischen einem Werkzeug das man benutzt und einem das man versteht.</p></div>
+      <div class="bullet"><div class="dot"></div><p>Das Scope-Creep war lehrreich: Die Challenge startete als FHGR Studienempfehlung und entwickelte sich zu einem breiteren Karriere-Compass. KI-Projekte wachsen schnell wenn man anfängt zu experimentieren — klare Grenzen setzen ist wichtig.</p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <p class="eyebrow">Gruppeninfo</p>
+    <h2>Beteiligte & Eigenleistung</h2>
+    <div class="group-box">
+      <div class="gcol">
+        <span class="glabel">Gemeinsam</span>
+        <span class="gval">Strategisches Brainstorming, USP, Drei-Säulen-Konzept, visuelles Sourcing</span>
+      </div>
+      <div class="gcol">
+        <span class="glabel">Eigenleistung Valérie</span>
+        <span class="gval">XAI-Abschnitte, Stitch Testing, Lovable Umsetzung, Feature-Dokumentation</span>
+      </div>
+      <div class="gcol">
+        <span class="glabel">Tools</span>
+        <span class="gval">Lovable, Stitch (Google), Figma, Pinterest (visuelles Sourcing)</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<nav class="bnav">
+  <a href="challenge-f2.html">← Challenge F2</a>
+  <a href="index.html">Übersicht</a>
+  <a href="meta.html">Meta-Reflexion →</a>
+</nav>
+</body>
+</html>

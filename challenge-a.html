@@ -1,1 +1,166 @@
-<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Challenge — Valérie Heynen</title><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet"/><style>*{box-sizing:border-box;margin:0;padding:0}:root{--bg:#f7f7f5;--border:#e4e4e0;--text-primary:#1a1a18;--text-secondary:#6b6b67;--text-tertiary:#a0a09c}body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--text-primary);-webkit-font-smoothing:antialiased}nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(247,247,245,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 40px;height:56px;display:flex;align-items:center;justify-content:space-between}.nav-logo{font-size:14px;font-weight:500;color:var(--text-primary);text-decoration:none}.nav-back{font-size:13px;color:var(--text-secondary);text-decoration:none}.placeholder{padding:160px 40px;max-width:860px;margin:0 auto;text-align:center}.mono{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-tertiary);margin-bottom:20px}h1{font-size:32px;font-weight:300;letter-spacing:-.02em;margin-bottom:16px}p{font-size:15px;color:var(--text-secondary);line-height:1.7}.btn{display:inline-block;margin-top:32px;font-size:13px;color:var(--text-secondary);text-decoration:none;border:1px solid var(--border);padding:10px 20px;border-radius:8px}</style></head><body><nav><a class="nav-logo" href="index.html">Valérie Heynen</a><a class="nav-back" href="index.html">← Alle Challenges</a></nav><div class="placeholder"><p class="mono">In Bearbeitung</p><h1>Seite wird noch abgefüllt</h1><p>Diese Challenge-Seite wird demnächst ergänzt.</p><a class="btn" href="index.html">← Zurück zur Übersicht</a></div></body></html>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Challenge A — Valérie Monney</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#faf8f5;
+      --warm:#f2ede6;
+      --surface:#ffffff;
+      --border:#e5e0d8;
+      --text:#1a1916;
+      --text-2:#6e6b63;
+      --text-3:#aea9a0;
+      --coral:#e8450a;
+      --coral-bg:#fdf0eb;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,245,0.93);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 40px;height:54px;display:flex;align-items:center;justify-content:space-between}
+    .nav-name{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--text);text-decoration:none}
+    .nav-back{font-size:13px;color:var(--text-2);text-decoration:none;transition:color 0.15s}
+    .nav-back:hover{color:var(--text)}
+
+    /* HERO HEADER — warm tinted */
+    .header{background:var(--warm);padding:90px 40px 48px;border-bottom:1px solid var(--border)}
+    .header-inner{max-width:920px;margin:0 auto}
+    .breadcrumb{font-family:'DM Mono',monospace;font-size:10px;color:var(--text-3);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:16px}
+    .big-letter{font-family:'Syne',sans-serif;font-size:110px;font-weight:800;line-height:0.85;letter-spacing:-0.04em;color:var(--coral);display:block;margin-bottom:14px}
+    .header h1{font-family:'Syne',sans-serif;font-size:clamp(22px,3vw,34px);font-weight:700;letter-spacing:-0.02em;line-height:1.2;margin-bottom:20px;max-width:560px}
+    .pills{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:32px}
+    .pill{font-family:'DM Mono',monospace;font-size:10px;padding:5px 12px;border-radius:20px;border:1px solid var(--border);color:var(--text-2);background:var(--surface)}
+    .pill.hot{background:var(--coral-bg);border-color:#f0b49a;color:var(--coral)}
+    .figma-btn{display:inline-flex;align-items:center;gap:8px;background:var(--coral);color:white;font-family:'Syne',sans-serif;font-size:13px;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none;transition:opacity 0.15s;letter-spacing:0.01em}
+    .figma-btn:hover{opacity:0.88}
+
+    /* CONTENT */
+    .content{max-width:920px;margin:0 auto;padding:0 40px 100px}
+
+    .block{padding:48px 0;border-bottom:1px solid var(--border)}
+    .block:last-child{border-bottom:none}
+
+    .eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--coral);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+    .eyebrow::after{content:'';flex:0 0 24px;height:1px;background:var(--coral);opacity:0.35}
+    .block h2{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;margin-bottom:12px;letter-spacing:-0.01em}
+    .block p{font-size:14px;color:var(--text-2);line-height:1.8;max-width:600px}
+
+    /* BOARD IMAGE */
+    .board{margin-top:24px;border-radius:14px;overflow:hidden;border:1px solid var(--border);position:relative;background:var(--warm)}
+    .board img{width:100%;display:block;transition:opacity 0.3s}
+    .board-bar{padding:14px 18px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;background:var(--surface)}
+    .board-caption{font-size:12px;color:var(--text-3);font-family:'DM Mono',monospace}
+    .board-link{display:inline-flex;align-items:center;gap:6px;color:var(--coral);font-family:'DM Mono',monospace;font-size:11px;text-decoration:none;font-weight:400;letter-spacing:0.04em;transition:opacity 0.15s}
+    .board-link:hover{opacity:0.75}
+
+    /* BULLETS */
+    .bullets{margin-top:18px;display:flex;flex-direction:column;gap:14px}
+    .bullet{display:flex;gap:14px;align-items:flex-start;padding:16px 20px;background:var(--warm);border-radius:10px}
+    .dot{width:6px;height:6px;border-radius:50%;background:var(--coral);margin-top:7px;flex-shrink:0}
+    .bullet p{font-size:14px;color:var(--text-2);line-height:1.7}
+
+    /* GROUP */
+    .group-box{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border-radius:12px;overflow:hidden;margin-top:20px;border:1px solid var(--border)}
+    .gcol{background:var(--surface);padding:20px 22px;display:flex;flex-direction:column;gap:5px}
+    .glabel{font-family:'DM Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-3)}
+    .gval{font-size:13px;color:var(--text-2);line-height:1.5}
+
+    /* BOTTOM NAV */
+    .bnav{display:flex;justify-content:space-between;align-items:center;padding:32px 40px 52px;max-width:920px;margin:0 auto;border-top:1px solid var(--border)}
+    .bnav a{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--text-2);text-decoration:none;transition:color 0.15s}
+    .bnav a:hover{color:var(--coral)}
+    .bnav span{font-size:12px;color:var(--text-3);font-family:'DM Mono',monospace}
+
+    @media(max-width:640px){
+      nav,.content,.bnav{padding-left:20px;padding-right:20px}
+      .header{padding-left:20px;padding-right:20px}
+      .big-letter{font-size:80px}
+      .group-box{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-name" href="index.html">Valérie Monney</a>
+  <a class="nav-back" href="index.html">← Alle Challenges</a>
+</nav>
+
+<div class="header">
+  <div class="header-inner">
+    <p class="breadcrumb">Portfolio / Challenge A</p>
+    <span class="big-letter">A</span>
+    <h1>Kreative KI-Nutzung für<br/>Produkt- & Servicedesign</h1>
+    <div class="pills">
+      <span class="pill hot">Konzept</span>
+      <span class="pill hot">Prompting</span>
+      <span class="pill">Image Generation</span>
+      <span class="pill">Multimodal</span>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+    <a class="figma-btn" href="https://www.figma.com/board/d0KBdnZYXws3fRg0HMkTjx/Portfolio-DEAI-Val%C3%A9rie-Monney?node-id=0-1&t=GiBQzQtWbTQhQe9k-1" target="_blank">
+      Im Figma öffnen ↗
+    <a class="figma-btn" href="https://suno.com/song/3e5dbd05-3788-47be-8285-031e7b5002cc" target="_blank" style="background:#1a1916;margin-top:0">Radiospot auf Suno ↗</a>
+    </div>
+    </a>
+  </div>
+</div>
+
+<main class="content">
+
+  <section class="block">
+    <p class="eyebrow">Artefakt</p>
+    <h2>Die Chursphäre</h2>
+    <p>Ein KI-gestütztes Tourismus-Konzept für Chur: ein minimalistischer Seilbahn-Loop mit transparenten Panorama-Lounges und einem interaktiven KI-Guide, der Licht, Musik und lokales Wissen in Echtzeit auf die Gruppe anpasst.</p>
+    <div class="board">
+      <img src="cha-figma.png" alt="Challenge A Figma Board — Chursphäre"/>
+      <div class="board-bar">
+        <span class="board-caption">Challenge A · Figma Board</span>
+        <a class="board-link" href="https://www.figma.com/board/d0KBdnZYXws3fRg0HMkTjx/Portfolio-DEAI-Val%C3%A9rie-Monney?node-id=0-1&t=GiBQzQtWbTQhQe9k-1" target="_blank">Vollansicht öffnen ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <p class="eyebrow">Iteration</p>
+    <h2>Vom Brainstorming zum Master-Prompt</h2>
+    <p>Die stärksten Einzelideen wurden zu einem Gesamtkonzept verdichtet. Dieses Konzept wurde zum „roten Faden" der Prompting-Strategie — für konsistente KI-Outputs über alle Formate (Bild, Video, Audio, Signage).</p>
+  </section>
+
+  <section class="block">
+    <p class="eyebrow">Reflexion</p>
+    <h2>Learnings</h2>
+    <div class="bullets">
+      <div class="bullet"><div class="dot"></div><p>Gemini war in der frühen Phase hilfreich für Ideenfindung — der Thinking-Modus lieferte präzisere Prompts sobald ein klares Konzept stand.</p></div>
+      <div class="bullet"><div class="dot"></div><p>Ein Master-Prompt als Identitätsdefinition sichert konsistente KI-Outputs über alle Kanäle und Formate.</p></div>
+      <div class="bullet"><div class="dot"></div><p>ElevenLabs entsprach nicht den Erwartungen — die Audio-Resultate konnten das Projekt nur begrenzt unterstützen.</p></div>
+      <div class="bullet"><div class="dot"></div><p>Multimodale Outputs aus einem Konzept zu generieren zeigt das volle Potenzial von KI — aber auch die Grenzen einzelner Tools.</p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <p class="eyebrow">Gruppeninfo</p>
+    <h2>Beteiligte & Eigenleistung</h2>
+    <div class="group-box">
+      <div class="gcol"><span class="glabel">Gruppe</span><span class="gval">Valérie Monney &amp; Eliane Fehlmann</span></div>
+      <div class="gcol"><span class="glabel">Eigenleistung Valérie</span><span class="gval">Bild-Iterationen, finales Video, Radiospot/Song</span></div>
+      <div class="gcol"><span class="glabel">Eigenleistung Eliane</span><span class="gval">Bild-Iterationen, zweites Video, Plakatdarstellungen</span></div>
+    </div>
+  </section>
+
+</main>
+
+<nav class="bnav">
+  <span>— Erste Challenge</span>
+  <a href="index.html">Übersicht</a>
+  <a href="challenge-b.html">Challenge B →</a>
+</nav>
+
+</body>
+</html>
